@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+</head>
+<script type="text/javascript">
+function getRTime(){
+var EndTime= new Date('2020/11/13 00:00:00'); //截止时间
+var NowTime = new Date();
+var t =EndTime.getTime() - NowTime.getTime();
+/*var d=Math.floor(t/1000/60/60/24);
+t-=d*(1000*60*60*24);
+var h=Math.floor(t/1000/60/60);
+t-=h*60*60*1000;
+var m=Math.floor(t/1000/60);
+t-=m*60*1000;
+var s=Math.floor(t/1000);*/
+
+var d=Math.floor(t/1000/60/60/24);
+var h=Math.floor(t/1000/60/60%24);
+var m=Math.floor(t/1000/60%60);
+var s=Math.floor(t/1000%60);
+
+document.getElementById("t_d").innerHTML = d + "天";
+document.getElementById("t_h").innerHTML = h + "时";
+document.getElementById("t_m").innerHTML = m + "分";
+document.getElementById("t_s").innerHTML = s + "秒";
+}
+setInterval(getRTime,1000);
+</script>
+<body>
+
+<br><br><br><br><br>
+<div align="center">
+    <h1>
+        <font color="#BA55D3" face="KaiTi"> ～～ 蛋糕 🍰 🍰  生日倒计时  🍰 🍰 ～～ </font>
+    </h1>
+    <h1>
+        <font color="#D02090"> ～～  💐 💐 我的小可爱 💐 杨凤玲 💐 💐 ～～ </font>
+    </h1>
+</div>
+
+<DIV id="CountMsg" class="HotDate" align="center">
+    <font color="#1E90FF">
+        <h1>生日倒计时：
+        <span id="t_d">00天</span>
+        <span id="t_h">00时</span>
+        <span id="t_m">00分</span>
+        <span id="t_s">00秒</span>
+        </h1>
+    </font>
+</DIV>
+
+</body>
+</html>
